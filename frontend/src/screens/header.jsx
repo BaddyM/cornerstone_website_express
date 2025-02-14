@@ -1,4 +1,5 @@
 import badge from "../images/badge.jpg";
+import {Icons} from "react-icons";
 
 function toggleSearch() {
     const searchInput = document.getElementById("search-input").style.display;
@@ -40,33 +41,112 @@ export default function Header() {
                     <input type="text" id="search-input" placeholder="Search" className="form-control rounded-0" />
                 </div>
             </div>
-            <button className="menu-btn" id="menu-btn" onClick={showMenu}>
+
+            <nav
+                class="navbar navbar-expand-sm navbar-light bg-light"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src={badge} width={50} height={50} alt="" />
+                    </a>
+                    <button
+                        class="navbar-toggler d-lg-none"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId"
+                        aria-controls="collapsibleNavId"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li className="nav-item"><a href="/" className="nav-link" > <i className="bi bi-house"></i> Home</a></li>
+                        <li className="dropdown" style={{zIndex:"99"}}>
+                            <a href="#" className="dropdown-toggle nav-link" data-bs-toggle="dropdown">About</a>
+                            <ul className="dropdown-menu shadow border-0">
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">About CHS</a></li>
+                                <li className="dropdown-item"><a href="/Staff" className="nav-link text-primary">Staff Members</a></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown" style={{zIndex:"99"}}>
+                            <a href="#" className="dropdown-toggle nav-link" data-bs-toggle="dropdown"><i className="bi bi-book"></i> Academics</a>
+                            <ul className="dropdown-menu">
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">School TimeTable</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Subjects Taught</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">UNEB Results</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">E-Learning</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Useful Resources</a></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown" style={{zIndex:"99"}}>
+                            <a href="#" className="dropdown-toggle nav-link" data-bs-toggle="dropdown"><i className="bi bi-pen"></i> School Life</a>
+                            <ul className="dropdown-menu">
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">School Clubs</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Prefects Body</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">School Events</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">School News</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown" style={{zIndex:"99"}}>
+                            <a href="#" className="dropdown-toggle nav-link" data-bs-toggle="dropdown"><i className="bi bi-journal"></i> Admission</a>
+                            <ul className="dropdown-menu">
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">School Fees</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Admission</a></li>
+                            </ul>
+                        </li>
+                        <li className="dropdown" style={{zIndex:"99"}}>
+                            <a href="#" className="dropdown-toggle nav-link" data-bs-toggle="dropdown"><i className="bi bi-lock"></i> Portals</a>
+                            <ul className="dropdown-menu">
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Students</a></li>
+                                <li className="dropdown-item"><a href="https://admin.cornerstonehighschoolnangabo.com/" className="nav-link text-primary">Admin</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                        <form class="d-flex my-2 my-lg-0">
+                            <input
+                                class="form-control me-sm-2"
+                                type="text"
+                                placeholder="Search"
+                            />
+                            <button
+                                class="btn btn-outline-primary my-2 my-sm-0"
+                                type="submit"
+                            >
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            
+
+
+            <button className="menu-btn d-none" id="menu-btn" onClick={showMenu}>
                 <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
-            <div className="nav-container shadow-sm" id="nav-container">
+            <div className="nav-container shadow-sm d-none" id="nav-container">
                 <img src={badge} width={80} height={80} alt="" />
                 <nav>
                     <ul>
-                        <li><a href="">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li className="dropdown" style={{zIndex:"99"}}>
                             <a href="#" className="dropdown-toggle" data-bs-toggle="dropdown">About</a>
                             <ul className="dropdown-menu shadow border-0">
                                 <li className="dropdown-item"><a href="#" className="nav-link text-primary">About CHS</a></li>
-                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Director</a></li>
-                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Managing Director</a></li>
-                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Headteacher</a></li>
-                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Deputy Headteacher</a></li>
-                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">DOS</a></li>
-                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Staff Members</a></li>
+                                <li className="dropdown-item"><a href="/Staff" className="nav-link text-primary">Staff Members</a></li>
                             </ul>
                         </li>
                         <li className="dropdown" style={{zIndex:"99"}}>
                             <a href="#" className="dropdown-toggle" data-bs-toggle="dropdown">Academics</a>
                             <ul className="dropdown-menu">
                                 <li className="dropdown-item"><a href="#" className="nav-link text-primary">School TimeTable</a></li>
+                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Subjects Taught</a></li>
                                 <li className="dropdown-item"><a href="#" className="nav-link text-primary">UNEB Results</a></li>
                                 <li className="dropdown-item"><a href="#" className="nav-link text-primary">E-Learning</a></li>
                                 <li className="dropdown-item"><a href="#" className="nav-link text-primary">Useful Resources</a></li>
@@ -93,7 +173,7 @@ export default function Header() {
                             <a href="#" className="dropdown-toggle" data-bs-toggle="dropdown">Portals</a>
                             <ul className="dropdown-menu">
                                 <li className="dropdown-item"><a href="#" className="nav-link text-primary">Students</a></li>
-                                <li className="dropdown-item"><a href="#" className="nav-link text-primary">Admin</a></li>
+                                <li className="dropdown-item"><a href="https://admin.cornerstonehighschoolnangabo.com/" className="nav-link text-primary">Admin</a></li>
                             </ul>
                         </li>
                     </ul>

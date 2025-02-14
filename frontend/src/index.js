@@ -10,6 +10,8 @@ import "./css/custom.css";
 import "./css/responsive.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Messages from './screens/messages';
+import StaffMembers from './screens/staff';
+import NotFound from './screens/not_found';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +19,8 @@ root.render(
     <Routes>
         <Route index element={<Home/>} ></Route>
         <Route path='/Messages/:id' element={<Messages/>} ></Route>
+        <Route path='/Staff' element={<StaffMembers/>} ></Route>
+        <Route path='*' element={<NotFound/>} ></Route>
     </Routes>
  </BrowserRouter>
 );

@@ -97,6 +97,10 @@ body {
   animation-fill-mode: forwards;
 }
 
+.active, .nav-link{
+    color: var(--primary-dark) !important;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -225,6 +229,21 @@ body {
     color: white;
     border-radius: 5px;
     padding: 7px;
+}
+
+.footer_links > li{
+    transition: all ease-in-out .4s;
+}
+
+.footer_links > li:hover{
+    transform: translateX(10px);
+}
+
+.loading_container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes search {

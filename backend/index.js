@@ -37,6 +37,39 @@ app.get("/news", async (req, res)=>{
     res.send(school_news);
 });
 
+app.get("/messages", async (req, res)=>{
+    const messages = await prisma.messages.findMany();
+    // for(let i=0; i<messages.length; i++){
+    //     messages[i].image = `/images/messages/${messages[i].image}`;
+    // }
+    res.send(messages);
+});
+
+app.get("/messages/:id", async (req, res)=>{
+    const id = parseInt(req.params.id);
+    try{
+        const messages = await prisma.messages.findUnique({
+            where:{
+                id:id
+            }
+        });
+    
+        for(let i=0; i<messages.length; i++){
+            messages[i].image = `/images/messages/${messages[i].image}`;
+        }
+        res.send(messages);
+    }catch(e){
+        console.log(`Error: ${e}`);
+        const messages = {};
+        res.send(messages);
+    }
+});
+
+app.get("/staff", async (req,res)=>{
+    const staff = await prisma.staff.findMany();
+    res.send(staff);
+});
+
 app.listen(PORT,()=>{
     console.log(`Listenting to port ${PORT}`);
 })

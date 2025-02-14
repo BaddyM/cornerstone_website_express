@@ -31,7 +31,7 @@
     .nav-container{
         display: block;
         position: absolute;
-        z-index: 2;
+        z-index: 9;
         background: rgba(2, 4, 4,0.7);
         width: 300px;
         right: 100%;
@@ -57,6 +57,12 @@
         margin: 10px 0px;
     }
 
+    .nav-container > nav > ul > li > ul{
+        position: absolute !important;
+        z-index: 999999 !important;
+        transform: translate3d(120px, 32.5px, 0px) !important;
+    }
+
     .nav-container > nav > ul > li > a{
         color: white;
     }
@@ -67,5 +73,9 @@
 
     .home-school-img-container > div{
         width: 95%;
+    }
+
+    .dropdown-menu{
+        
     }
 }

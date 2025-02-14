@@ -1,0 +1,71 @@
+@media only screen and (min-width:767px){
+    
+}
+
+@media only screen and (max-width:768px) {
+    .top-header{
+        display: block;
+    }
+
+    #school_title{
+        text-align: center;
+    }
+
+    .school_title_container{
+        margin-bottom: 10px;
+    }
+
+    .socials{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    .nav-container{
+        display: block;
+        position: absolute;
+        z-index: 2;
+        background: rgba(2, 4, 4,0.7);
+        width: 300px;
+        right: 100%;
+        padding: 10px;
+        transition: .6s all ease-in-out;
+    }
+
+    .nav-container > nav > ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-container > nav > ul > li{
+        width: 100%;
+        position: relative;
+    }
+
+    .nav-container > nav > ul {
+        display: block;
+    }
+
+    .nav-container > nav > ul > li{
+        margin: 10px 0px;
+    }
+
+    .nav-container > nav > ul > li > a{
+        color: white;
+    }
+
+    .nav-container.is_open{
+        right: 25%;
+    }
+
+    .home-school-img-container > div{
+        width: 95%;
+    }
+}

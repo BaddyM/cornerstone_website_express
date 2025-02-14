@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "oswald";
+  src: url("../fonts/Oswald-VariableFont_wght.ttf");
+}
+
+:root {
+  --primary-light: rgba(0, 103, 168, 0.3);
+  --primary-dark: rgba(0, 103, 168, 0.8);
+}
+
+body {
+  font-family: "oswald";
+  background: rgba(128, 128, 128, 0.256);
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  position: absolute;
+  left: 85%;
+  display: none;
+}
+
+.menu-btn > div {
+  width: 30px;
+  background: black;
+  height: 2px;
+  margin-bottom: 3px;
+}
+
+.menu-btn.active > div:first-child,
+.menu-btn.active > div:nth-child(2) {
+  display: none;
+  transition: 0.4s all ease-in-out;
+}
+
+.menu-btn.active > div:nth-child(3) {
+  transform: rotate(45deg) translateY(4px) translateX(3px);
+  transition: 0.4s all ease-in-out;
+}
+
+.menu-btn.active > div:nth-child(4) {
+  transform: rotate(-45deg);
+  transition: 0.4s all ease-in-out;
+}
+
+.socials {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.socials i {
+  font-size: 20px;
+}
+
+.socials a {
+  background: transparent;
+  padding: 7px 10px;
+  border-radius: 130px;
+  border: 2px solid rgba(0, 103, 168, 0.3);
+  transition: 0.4s all ease-in-out;
+}
+
+.socials a:hover {
+  color: white;
+  background: rgba(0, 103, 168, 0.5);
+  border: 2px solid rgba(0, 103, 168, 0.8);
+}
+
+.top-header {
+  padding: 7px;
+  background: rgba(0, 103, 168, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary-dark);
+  padding: 5px 10px;
+}
+
+.search-btn {
+  padding: 6px 10px;
+  color: white;
+  background: transparent;
+}
+
+#search-input {
+  display: none;
+  animation-name: search;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.nav-container > nav > ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-container > nav > ul > li > a {
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 5px 20px;
+  transition: 0.6s all ease-in-out;
+}
+
+.nav-container > nav > ul > li > a:hover {
+  /* background: rgba(0, 103, 168,0.3); */
+  border-bottom: 2px solid rgba(0, 103, 168, 0.5);
+}
+
+.nav-container > nav > ul > li {
+  transition: 0.5s all ease-in-out;
+}
+
+.nav-container > nav > ul > li:hover {
+  transform: translateY(-5px);
+}
+
+.title-border {
+  border-bottom: 5px solid var(--primary-dark);
+  margin: 0px 30px;
+}
+
+#school_title {
+  cursor: pointer;
+  transition: 1s all ease-in-out;
+}
+
+#school_title:hover {
+  transform: rotateY(360deg);
+}
+
+.messages > div {
+  cursor: pointer;
+  /* transition: .5s all ease-in-out; */
+}
+
+/* .messages > div:first-child:hover{
+    transform: scale(1.05);
+} */
+
+.submit-btn {
+  background: transparent;
+  border: 2px solid var(--primary-dark);
+  color: var(--primary-dark);
+  font-size: 12px;
+  padding: 5px 7px;
+  transition: 0.4s all ease-in-out;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+  color: white;
+  opacity: 1;
+}
+
+.home-school-img-container > div {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home-school-img-container > div > p {
+  position: absolute;
+  color: white;
+  opacity: 1;
+  z-index: 2;
+  font-size: 20px;
+}
+
+.home-school-img-container > div > div {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.school_title_home {
+  background-image: linear-gradient(green, yellow, red);
+  color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.events_calendar_container > div:last-child {
+  background: rgba(0, 157, 255, 0.3);
+  border: solid 2px rgba(0, 157, 255, 0.6);
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--primary-dark);
+}
+
+.calendar_event{
+    padding: 0px 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.calendar_event > div:first-child{
+    background: var(--primary-dark);
+    color: white;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+@keyframes search {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
